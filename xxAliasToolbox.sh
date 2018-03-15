@@ -2,7 +2,7 @@
 # HEREDOC string containing the aliases
 # xxAliasToolbox
 # Oneliner:
-# cd /tmp && wget https://pastebin.com/raw/5qhGr9FS -O xxAliasToolbox.sh && sed -i 's/\r$//' xxAliasToolbox.sh && bash xxAliasToolbox.sh
+# cd /tmp && wget https://pastebin.com/raw/95JFgH2S -O xxAliasToolbox.sh && sed -i 's/\r$//' xxAliasToolbox.sh && bash xxAliasToolbox.sh
 ################################
 SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
