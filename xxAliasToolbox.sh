@@ -4,12 +4,11 @@
 # Oneliner:
 # cd /tmp && wget https://pastebin.com/raw/5qhGr9FS -O xxAliasToolbox.sh && sed -i 's/\r$//' xxAliasToolbox.sh && bash xxAliasToolbox.sh
 ################################
-SCRIPTFILE="${HOME}/.bashrc"
 SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v2.2
+# v2.3
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
@@ -48,18 +47,22 @@ alias sl='ls'
 #ENDXXALIASTOOLBOX
 END_HEREDOC
 )
-if grep -q "#XXALIASTOOLBOX" "$SCRIPTFILE"; then
-# Remove old function and trailing empty lines
-echo 'Old version detected.'
-sed -i '/#XXALIASTOOLBOX/,/#ENDXXALIASTOOLBOX/g' "$SCRIPTFILE"
-sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' "$SCRIPTFILE"
-echo 'Removed old version.'
-fi
-# Write new function
-echo "$SCRIPTBASE" >> "$SCRIPTFILE"
-# shellcheck disable=SC1090
-source "$SCRIPTFILE"
+
+# Detect if old version is there.
+for RCFILE in `find ~/.*rc`; do
+    if grep -q "#XXALIASTOOLBOX" "$RCFILE"; then
+		# Remove old version and trailing empty lines.
+		echo "Old version detected in: $RCFILE"
+		sed -i '/#XXALIASTOOLBOX/,/#ENDXXALIASTOOLBOX/g' "$RCFILE"
+		sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' "$RCFILE"
+		echo "Removed old version from $RCFILE."
+	fi
+	# Write new xxAliasToolbox version to file.
+	echo "$SCRIPTBASE" >> "$RCFILE"
+	# shellcheck disable=SC1090
+	source "$RCFILE"
+	echo "Script installed in: $RCFILE"
+done
 unset SCRIPTBASE SCRIPTFILE
-echo 'Script installed in ~/.bashrc'
 exit 0
 # END OF FILE
