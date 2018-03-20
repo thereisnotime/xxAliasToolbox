@@ -2,7 +2,7 @@
 # HEREDOC string containing the aliases
 # xxAliasToolbox
 # Oneliner:
-# cd /tmp && wget https://pastebin.com/raw/wk3rECd2 -O xxAliasToolbox.sh && sed -i 's/\r$//' xxAliasToolbox.sh && bash xxAliasToolbox.sh
+# wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh
 ################################
 # Install dependencies
 apt-get install -y curl psmisc wget locate whois htop
@@ -107,3 +107,9 @@ done
 unset SCRIPTBASE RCFILE
 exit 0
 # END OF FILE
+
+
+
+for RCFILE in `find ~/.*rc`; do
+source "$RCFILE"
+done
