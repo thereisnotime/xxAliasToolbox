@@ -5,19 +5,18 @@
 # wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh
 ################################
 # Install dependencies
-apt-get install -y curl psmisc wget locate whois htop
+apt-get install -y curl psmisc wget locate whois htop net-tools screen
 
 # Script to write
 SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v2.7
+# v2.9
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
 alias xxupdate='apt-get update && apt-get upgrade'
-alias xxtools='apt-get -y install screen net-tools '
 alias xxinterfaces='ip link'
 alias xxtree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias xxservices='service --status-all'
@@ -101,15 +100,9 @@ fi
 # Write new xxAliasToolbox version to file.
 echo "$SCRIPTBASE" >> "$RCFILE"
 # shellcheck disable=SC1090
-source "$RCFILE"
+exec "$SHELL"
 echo "Script installed in: $RCFILE"
 done
 unset SCRIPTBASE RCFILE
 exit 0
 # END OF FILE
-
-
-
-for RCFILE in `find ~/.*rc`; do
-source "$RCFILE"
-done

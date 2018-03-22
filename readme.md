@@ -18,3 +18,4 @@ if grep -q "#XXALIASTOOLBOX" "$RCFILE"; then
 fi
 done
 ```
+After that you can clear your environment variables and source ~/.*rc files or just exit and login again.
