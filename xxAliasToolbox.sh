@@ -100,7 +100,7 @@ fi
 # Write new xxAliasToolbox version to file.
 echo "$SCRIPTBASE" >> "$RCFILE"
 # shellcheck disable=SC1090
-exec "$SHELL"
+source "$RCFILE"
 echo "Script installed in: $RCFILE"
 done
 unset SCRIPTBASE RCFILE
