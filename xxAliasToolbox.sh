@@ -2,7 +2,7 @@
 # HEREDOC string containing the aliases
 # xxAliasToolbox
 # Oneliner:
-# wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh
+# curl -L https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh | sh
 ################################
 # Install dependencies
 apt-get install -y curl psmisc wget locate whois htop net-tools screen
@@ -12,7 +12,7 @@ SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v2.9
+# v3.0
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
@@ -100,7 +100,7 @@ fi
 # Write new xxAliasToolbox version to file.
 echo "$SCRIPTBASE" >> "$RCFILE"
 # shellcheck disable=SC1090
-source "$RCFILE"
+eval "$SCRIPTBASE"
 echo "Script installed in: $RCFILE"
 done
 unset SCRIPTBASE RCFILE

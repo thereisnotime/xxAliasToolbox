@@ -4,9 +4,14 @@
 A collection of helpful shell aliases and functons. It can autoinstall on bash, zsh and every other shell which will be listed in "find ~/.*rc".
 
 ### Installation ###
-Easy oneliner for installation:
+Easy oneliner for installation with wget:
 ```sh
 wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh
+``` 
+
+Easy oneliner for installation with curl:
+```sh
+curl -L https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh | sh
 ``` 
 
 ### Uninstall ###
