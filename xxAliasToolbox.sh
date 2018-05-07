@@ -53,6 +53,25 @@ alias wget='wget -c'
 alias dc='cd'
 alias sl='ls'
 #### Functions
+function xxhostname() {
+if [ $# -eq 0 ]; then
+	echo "Current hostname is: $(hostname)"
+	echo 'Usage: xxhostname NEWHOSTNAME'
+	return 1	
+fi
+if [ $# -eq 1 ]; then
+	NEWNAME=$1
+	OLDNAME=$(hostname)
+	sed -i "s/$OLDNAME/$NEWNAME/g" /etc/hosts
+	sed -i "s/$OLDNAME/$NEWNAME/g" /etc/hostname
+	/etc/init.d/hostname.sh start &> /dev/null
+	invoke-rc.d hostname.sh start &> /dev/null
+	hostnamectl set-hostname $NEWNAME &> /dev/null
+	sysctl kernel.hostname=$NEWNAME &> /dev/null
+	echo "After relogin, your new hostname will be $(echo $1)"
+	return 1
+fi
+}
 function xxwhois() {
 whois=$2
 if [ $# -eq 0 ] || [ $# -gt 2 ]; then
