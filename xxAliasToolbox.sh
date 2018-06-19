@@ -29,6 +29,7 @@ alias xxptree='pstree -a'
 alias xxfoldersize="du -h --max-depth=1 | sort -rh"
 alias xxneverhere="history -c && history -w"
 alias xxusers="cut -d: -f1 /etc/passwd"
+alias xxutcdate="TZ=utc date"
 alias xxupdateself='wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh'
 #### Shorteners
 alias xxshells='cat /etc/shells'
