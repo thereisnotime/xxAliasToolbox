@@ -60,7 +60,7 @@ alias dc='cd'
 alias sl='ls'
 #### Functions
 function xxhostname() {
-if [ $# -eq 0 ]; then
+if [ $# -eq 0 ] || [ $# -gt 1 ]; then
 	echo "Current hostname is: $(hostname)"
 	echo 'Usage: xxhostname NEWHOSTNAME'
 	return 1	
@@ -75,6 +75,16 @@ if [ $# -eq 1 ]; then
 	hostnamectl set-hostname $NEWNAME &> /dev/null
 	sysctl kernel.hostname=$NEWNAME &> /dev/null
 	echo "After relogin, your new hostname will be $(echo $1)"
+	return 1
+fi
+}
+function xxgetmac() {
+if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+	echo 'Usage: xxgetmac INTERFACE'
+	return 1	
+fi
+if [ $# -eq 1 ]; then
+	ip -o link show dev $1 | grep -Po 'ether \K[^ ]*'
 	return 1
 fi
 }
