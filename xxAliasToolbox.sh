@@ -30,9 +30,12 @@ alias xxfoldersize="du -h --max-depth=1 | sort -rh"
 alias xxneverhere="history -c && history -w"
 alias xxusers="cut -d: -f1 /etc/passwd"
 alias xxutcdate="TZ=utc date"
-alias xxregx='echo [0-9a-f]{2}:[0-9a-f]'
-alias xxmacs=ifconfig | grep -E `xxregx`
+alias xxmacs=ifconfig | grep -E `xxregxmac`
+alias xxips=ifconfig | grep -E `xxregxip`
 alias xxupdateself='wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh'
+#### Regular Expressions
+alias xxregxmac="echo [0-9a-f]{2}:[0-9a-f]"
+alias xxregxip="echo [0-255].[0-255].[0-255].[0-255]"
 #### Shorteners
 alias xxshells='cat /etc/shells'
 alias c='clear'
