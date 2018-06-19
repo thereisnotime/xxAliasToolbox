@@ -5,14 +5,14 @@
 # curl -L https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh | sh
 ################################
 # Install dependencies
-apt-get install -y curl psmisc wget locate whois htop net-tools screen
+apt-get install -y curl psmisc wget locate whois htop net-tools screen jq xmlstarlet yamllint
 
 # Script to write
 SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v3.0
+# v3.5
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
@@ -33,6 +33,10 @@ alias xxutcdate='TZ=utc date'
 alias xxmacs='ifconfig | grep -E `xxregxmac`'
 alias xxips='ifconfig | grep -E `xxregxip`'
 alias xxupdateself='wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh'
+#### Validators
+alias xxyamlcheck='yamllint '
+alias xxjsoncheck='jq "." >/dev/null <'
+alias xxxmlcheck='xmlstarlet val '
 #### Regular Expressions
 alias xxregxmac='echo [0-9a-f]{2}:[0-9a-f]'
 alias xxregxip="echo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
