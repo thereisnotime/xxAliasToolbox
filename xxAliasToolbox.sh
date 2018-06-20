@@ -74,12 +74,12 @@ alias soruce='source'
 alias souce='source'
 #### Functions
 function xxtouchsize(){
-if [ $# -eq 0 ] || [ $# -gt 2 ]; then
-	echo 'Creates dummy files with specified size.'
-	echo 'Usage: xxtouchsize 200M TEMP.TXT'
+if [ $# -eq 2 ]; then
+	fallocate -l $1 $2
 	return 1	
 fi
-fallocate -l $1 $2
+echo 'Creates dummy files with specified size.'
+echo 'Usage: xxtouchsize 200M TEMP.TXT'
 }
 function xxurlencode() {
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
