@@ -12,7 +12,7 @@ SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v3.7
+# v3.8
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
@@ -72,8 +72,14 @@ alias mdkir='mkdir'
 alias soruce='source'
 alias souce='source'
 #### Functions
-
-
+function xxtouchsize(){
+if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+	echo 'Creates dummy files with specified size.'
+	echo 'Usage: xxtouchsize 200M TEMP.TXT'
+	return 1	
+fi
+fallocate -l $1 $2
+}
 function xxurlencode() {
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
 	echo 'Usage: xxurlencode STRING'
