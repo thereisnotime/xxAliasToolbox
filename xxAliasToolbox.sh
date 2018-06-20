@@ -81,7 +81,7 @@ if [ $# -eq 0 ] || [ $# -gt 1 ]; then
 fi
 echo -ne $1 | hexdump -v -e '/1 "%02x"' | sed 's/\(..\)/%\1/g'
 }
-function xxurlencode() {
+function xxurldecode() {
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
 	echo 'Usage: xxurlencode STRING'
 	return 1	
