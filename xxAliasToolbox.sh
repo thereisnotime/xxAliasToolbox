@@ -60,7 +60,7 @@ alias fgrep='fgrep --color=auto'
 alias mount='mount |column -t'
 alias df='df -H'
 alias du='du -ch'
-alias ls='ls -l --color=auto'
+alias ls='ls -lha --color=auto'
 # Requires colordiff package
 alias diff='colordiff'
 #### Speeders
