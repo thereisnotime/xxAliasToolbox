@@ -12,7 +12,7 @@ SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v3.6
+# v3.7
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
@@ -72,12 +72,22 @@ alias mdkir='mkdir'
 alias soruce='source'
 alias souce='source'
 #### Functions
+
+
 function xxurlencode() {
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
 	echo 'Usage: xxurlencode STRING'
 	return 1	
 fi
 echo -ne $1 | hexdump -v -e '/1 "%02x"' | sed 's/\(..\)/%\1/g'
+}
+function xxurlencode() {
+if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+	echo 'Usage: xxurlencode STRING'
+	return 1	
+fi
+local url_encoded="${1//+/ }"
+printf '%b' "${url_encoded//%/\\x}"
 }
 function xxhostname() {
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
