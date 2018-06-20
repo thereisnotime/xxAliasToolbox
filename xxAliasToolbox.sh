@@ -73,7 +73,7 @@ alias soruce='source'
 alias souce='source'
 #### Functions
 function xxtouchsize(){
-if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+if [ $# -eq 0 ] || [ $# -gt 2 ]; then
 	echo 'Creates dummy files with specified size.'
 	echo 'Usage: xxtouchsize 200M TEMP.TXT'
 	return 1	
