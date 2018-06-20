@@ -41,7 +41,7 @@ alias xxxmlcheck='xmlstarlet val '
 alias xxascii='man ascii | grep -m 1 -A 63 --color=never Oct'
 alias xxalphabet='echo a b c d e f g h i j k l m n o p q r s t u v w x y z'
 alias xxunicode='echo ✓ ™  ♪ ♫ ☃ ° Ɵ ∫'
-alias xxnumalphabet='alphabet; echo 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6'
+alias xxnumalphabet='xxalphabet; echo 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6'
 #### Regular Expressions
 alias xxregxmac='echo [0-9a-f]{2}:[0-9a-f]'
 alias xxregxip="echo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
