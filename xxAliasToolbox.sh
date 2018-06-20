@@ -12,7 +12,7 @@ SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v3.5
+# v3.6
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
@@ -37,9 +37,15 @@ alias xxupdateself='wget https://github.com/thereisnotime/xxAliasToolbox/raw/mas
 alias xxyamlcheck='yamllint '
 alias xxjsoncheck='jq "." >/dev/null <'
 alias xxxmlcheck='xmlstarlet val '
+#### Characters
+alias xxascii='man ascii | grep -m 1 -A 63 --color=never Oct'
+alias xxalphabet='echo a b c d e f g h i j k l m n o p q r s t u v w x y z'
+alias xxunicode='echo ✓ ™  ♪ ♫ ☃ ° Ɵ ∫'
+alias xxnumalphabet='alphabet; echo 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6'
 #### Regular Expressions
 alias xxregxmac='echo [0-9a-f]{2}:[0-9a-f]'
 alias xxregxip="echo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
+alias xxregxemail='echo "[^[:space:]]+@[^[:space:]]+"'
 #### Shorteners
 alias xxshells='cat /etc/shells'
 alias c='clear'
@@ -62,7 +68,17 @@ alias wget='wget -c'
 #### Dyslexia
 alias dc='cd'
 alias sl='ls'
+alias mdkir='mkdir'
+alias soruce='source'
+alias souce='source'
 #### Functions
+function xxurlencode() {
+if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+	echo 'Usage: xxurlencode STRING'
+	return 1	
+fi
+echo -ne $1 | hexdump -v -e '/1 "%02x"' | sed 's/\(..\)/%\1/g'
+}
 function xxhostname() {
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
 	echo "Current hostname is: $(hostname)"
