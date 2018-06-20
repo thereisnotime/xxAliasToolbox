@@ -12,7 +12,7 @@ SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v3.8
+# v3.9
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
@@ -32,6 +32,7 @@ alias xxusers="cut -d: -f1 /etc/passwd"
 alias xxutcdate='TZ=utc date'
 alias xxmacs='ifconfig | grep -E `xxregxmac`'
 alias xxips='ifconfig | grep -E `xxregxip`'
+alias xxemptydirectory='rm * &> /dev/null;rm -rf * &> /dev/null'
 alias xxupdateself='wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh'
 #### Validators
 alias xxyamlcheck='yamllint '
