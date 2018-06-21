@@ -91,26 +91,21 @@ echo 'Creates dummy files with specified size.'
 echo 'Usage: xxtouchsize 200M TEMP.TXT'
 }
 function xxurlencode() {
-if [ $# -eq 0 ] || [ $# -gt 1 ]; then
-	echo 'Usage: xxurlencode STRING'
+if [ $# -eq 1 ]; then
+	echo -ne $1 | hexdump -v -e '/1 "%02x"' | sed 's/\(..\)/%\1/g'
 	return 1	
 fi
-echo -ne $1 | hexdump -v -e '/1 "%02x"' | sed 's/\(..\)/%\1/g'
+echo 'Usage: xxurlencode STRING'
 }
 function xxurldecode() {
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
-	echo 'Usage: xxurlencode STRING'
+	local url_encoded="${1//+/ }"
+	printf '%b' "${url_encoded//%/\\x}"
 	return 1	
 fi
-local url_encoded="${1//+/ }"
-printf '%b' "${url_encoded//%/\\x}"
+echo 'Usage: xxurldecode STRING'
 }
 function xxhostname() {
-if [ $# -eq 0 ] || [ $# -gt 1 ]; then
-	echo "Current hostname is: $(hostname)"
-	echo 'Usage: xxhostname NEWHOSTNAME'
-	return 1	
-fi
 if [ $# -eq 1 ]; then
 	NEWNAME=$1
 	OLDNAME=$(hostname)
@@ -123,16 +118,15 @@ if [ $# -eq 1 ]; then
 	echo "After relogin, your new hostname will be $(echo $1)"
 	return 1
 fi
+echo "Current hostname is: $(hostname)"
+echo 'Usage: xxhostname NEWHOSTNAME'	
 }
 function xxgetmac() {
-if [ $# -eq 0 ] || [ $# -gt 1 ]; then
-	echo 'Usage: xxgetmac INTERFACE'
-	return 1	
-fi
 if [ $# -eq 1 ]; then
 	ip -o link show dev $1 | grep -Po 'ether \K[^ ]*'
 	return 1
 fi
+echo 'Usage: xxgetmac INTERFACE'
 }
 function xxwhois() {
 whois=$2
