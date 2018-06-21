@@ -5,7 +5,7 @@
 # curl -L https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh | sh
 ################################
 # Install dependencies
-apt-get install -y curl psmisc wget locate whois htop net-tools screen jq xmlstarlet yamllint
+apt-get install -y curl psmisc wget locate whois htop net-tools screen jq xmlstarlet yamllint pv dtrx
 
 # Script to write
 SCRIPTBASE=$(cat <<'END_HEREDOC'
@@ -73,6 +73,15 @@ alias mdkir='mkdir'
 alias soruce='source'
 alias souce='source'
 #### Functions
+function xxuploadfile(){
+if [ $# -eq 1 ]; then
+	curl --upload-file $1 https://transfer.sh/
+	printf('\n')
+	return 1	
+fi
+echo 'Uploads file to transfer.sh'
+echo 'Usage: xxuploadfile FILE.TXT'
+}
 function xxtouchsize(){
 if [ $# -eq 2 ]; then
 	fallocate -l $1 $2
