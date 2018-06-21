@@ -76,7 +76,7 @@ alias souce='source'
 function xxuploadfile(){
 if [ $# -eq 1 ]; then
 	curl --upload-file $1 https://transfer.sh/
-	printf('\n')
+	printf '\n'
 	return 1	
 fi
 echo 'Uploads file to transfer.sh'
