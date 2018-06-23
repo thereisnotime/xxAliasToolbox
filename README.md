@@ -4,6 +4,8 @@
 A collection of helpful shell aliases and functons. It can autoinstall on bash, zsh and every other shell which will be listed in "find ~/.*rc".
 
 ### Installation ###
+* WARNING: The current public version of the script installs the aliases and the functions in all *.rc files in your current ~ folder. It should not create any problems, but if it does - please open an issue here.
+
 Easy oneliner for installation with wget:
 ```sh
 wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh
