@@ -13,7 +13,7 @@ wget https://raw.githubusercontent.com/thereisnotime/xxAliasToolbox/master/xxAli
 
 Easy oneliner for installation with curl:
 ```sh
-curl -L https://raw.githubusercontent.com/thereisnotime/xxAliasToolbox/master/xxAliasToolbox.sh | sh
+curl -L https://raw.githubusercontent.com/thereisnotime/xxAliasToolbox/master/xxAliasToolbox.sh | bash
 ``` 
 
 ### Dependencies ###
