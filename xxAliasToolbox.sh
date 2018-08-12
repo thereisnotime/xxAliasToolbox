@@ -2,7 +2,7 @@
 # HEREDOC string containing the aliases
 # xxAliasToolbox
 # Oneliner:
-# curl -L https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh | sh
+# bash <(curl -s https://raw.githubusercontent.com/thereisnotime/xxAliasToolbox/master/xxAliasToolbox.sh)
 ################################
 # Install dependencies
 apt-get install -y curl psmisc wget locate whois htop net-tools screen jq xmlstarlet yamllint pv dtrx
