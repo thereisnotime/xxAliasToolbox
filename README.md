@@ -8,12 +8,12 @@ A collection of helpful shell aliases and functons. It can autoinstall on bash, 
 
 Easy oneliner for installation with wget:
 ```sh
-wget https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh
+wget https://raw.githubusercontent.com/thereisnotime/xxAliasToolbox/master/xxAliasToolbox.sh -O /tmp/xxAliasToolbox.sh && chmod +x /tmp/xxAliasToolbox.sh && /tmp/xxAliasToolbox.sh && rm /tmp/xxAliasToolbox.sh
 ``` 
 
 Easy oneliner for installation with curl:
 ```sh
-curl -L https://github.com/thereisnotime/xxAliasToolbox/raw/master/xxAliasToolbox.sh | sh
+curl -L https://raw.githubusercontent.com/thereisnotime/xxAliasToolbox/master/xxAliasToolbox.sh | sh
 ``` 
 
 ### Dependencies ###
