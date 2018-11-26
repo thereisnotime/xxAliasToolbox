@@ -5,14 +5,14 @@
 # bash <(curl -s https://raw.githubusercontent.com/thereisnotime/xxAliasToolbox/master/xxAliasToolbox.sh)
 ################################
 # Install dependencies
-apt-get install -y curl psmisc wget locate whois htop net-tools screen jq xmlstarlet yamllint pv dtrx
+apt-get install -y curl psmisc wget locate whois htop net-tools screen jq xmlstarlet yamllint pv dtrx iotop
 
 # Script to write
 SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v3.9
+# v4.0
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
