@@ -68,7 +68,7 @@ alias mkdir='mkdir -pv'
 alias wget='wget -c'
 #### Dyslexia
 alias dc='cd'
-alias mount-'mount'
+alias mount='mount'
 alias sl='ls'
 alias mdkir='mkdir'
 alias soruce='source'
