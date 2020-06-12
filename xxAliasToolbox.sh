@@ -22,6 +22,7 @@ alias xxmount='mount | column -t'
 alias xxtree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias xxservices='service --status-all'
 alias xxflushservices='systemctl daemon-reload'
+alias xxdisk='lsblk -o NAME,TYPE,PATH,FSAVAIL,FSSIZE,FSUSE%,LABEL,MODE,STATE,SIZE,MOUNTPOINT -l'
 alias xxpfind='ps aux | grep '
 alias xxffind='find / -name '
 alias xxdfind='find / -type d -name '
