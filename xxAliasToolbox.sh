@@ -12,12 +12,13 @@ SCRIPTBASE=$(cat <<'END_HEREDOC'
 #XXALIASTOOLBOX
 ##################
 # xxAliasToolbox
-# v4.0
+# v4.1
 ##################
 #### Custom
 alias xxports='netstat -tulpn'
 alias xxupdate='apt-get update && apt-get upgrade'
 alias xxinterfaces='ip link'
+alias mount='mount'
 alias xxmount='mount | column -t'
 alias xxtree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias xxservices='service --status-all'
